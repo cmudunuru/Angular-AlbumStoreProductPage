@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http,Response } from '@angular/http';
-import { map } from 'rxjs/add/operator/map';
-import { tap } from 'rxjs/operators';
+import { tap,map } from 'rxjs/operators';
 
 @Injectable()
 export class ProductService {
@@ -10,14 +9,14 @@ export class ProductService {
 
   constructor(private _http:Http) { }
 
-  getAlbums(id: number){
+  getAlbum(id: number){
     return this._http.get(this._albumUrl).pipe(
       tap(data => console.log("Products:"+JSON.stringify(data))),
       map((response:any) => response.json())
       );
   }
 
-  getAlbum(id: number) {
+  /*getAlbum(id: number) {
     return this._http.get(this._albumUrl).map((response) => response.json());
-  }
+  }*/
 }

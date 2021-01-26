@@ -13,8 +13,8 @@ export class ProductDescriptionComponent implements OnInit {
 
   ngOnInit() {
     this._productService.getAlbum(0).subscribe({
-      next:response => this.albumInfo = response,
-      error:console.log("Error while invoking the album service")
+      next:(response)=>this.albumInfo=response,
+      error:err=>console.log("Error while invoking the productService")
     });
   }
 
