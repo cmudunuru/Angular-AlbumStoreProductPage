@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Http,Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { tap,map } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { Album } from './album';
 import { Product } from './product';
+import { map } from 'rxjs/add/operator/map';
 
 @Injectable()
 export class ProductService {
