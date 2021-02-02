@@ -14,7 +14,7 @@ export class ProductService {
   getAlbum(id: number):Observable<Album>{
     return this._http.get(this._albumUrl).pipe(
       tap(data => console.log("Products:"+JSON.stringify(data))),
-      map(response => response.json())
+      map(response => <Album>response.json())
       );
   }
 
